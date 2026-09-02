@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scholarship Hub</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>🎓 Scholarship Hub</h1>
+      <p>รวมทุนการศึกษาสำหรับนักเรียนและนักศึกษาทั่วโลก</p>
+    </div>
+  </header>
+
+  <!-- Search -->
+  <section class="search-section">
+    <div class="container">
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="ค้นหาชื่อทุน ประเทศ หรือระดับการศึกษา..."
+        >
+
+        <button id="searchButton" type="button">
+          🔍 ค้นหา
+        </button>
+      </div>
+
+      <!-- Categories -->
+      <div class="categories">
+
+        <button class="category-card active" data-category="ทั้งหมด">
+          <span>🌎</span>
+          <strong>ทั้งหมด</strong>
+        </button>
+
+        <button class="category-card" data-category="ม.ปลาย">
+          <span>🏫</span>
+          <strong>ม.ปลาย</strong>
+        </button>
+
+        <button class="category-card" data-category="ปริญญาตรี">
+          <span>🎓</span>
+          <strong>ปริญญาตรี</strong>
+        </button>
+
+        <button class="category-card" data-category="ปริญญาโท">
+          <span>📚</span>
+          <strong>ปริญญาโท</strong>
+        </button>
+
+        <button class="category-card" data-category="ปริญญาเอก">
+          <span>🔬</span>
+          <strong>ปริญญาเอก</strong>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scholarship Section -->
+  <main class="container scholarships-section">
+
+    <div class="section-title">
+      <div>
+        <h2>ทุนการศึกษาทั้งหมด</h2>
+        <p id="resultCount">กำลังโหลด...</p>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div id="scholarships" class="scholarship-grid"></div>
+
+    <!-- No Result -->
+    <div id="noResult" class="no-result hidden">
+      <div>🔎</div>
+      <h3>ไม่พบทุนการศึกษา</h3>
+      <p>ลองเปลี่ยนคำค้นหาหรือเลือกหมวดหมู่อื่น</p>
+    </div>
+
+  </main>
+
+  <!-- Modal -->
+  <div id="detailModal" class="modal">
+
+    <div class="modal-content">
+
+      <button id="closeModal" class="close-button" type="button">
+        ×
+      </button>
+
+      <div class="modal-header">
+        <span id="modalIcon">🎓</span>
+        <div>
+          <h2 id="modalTitle">รายละเอียดทุน</h2>
+          <p id="modalCountry"></p>
+        </div>
+      </div>
+
+      <div id="modalText" class="modal-text"></div>
+
+      <div class="modal-info">
+        <div>
+          <span>ระดับการศึกษา</span>
+          <strong id="modalLevel">-</strong>
+        </div>
+
+        <div>
+          <span>ประเภททุน</span>
+          <strong id="modalType">-</strong>
+        </div>
+
+        <div>
+          <span>วันหมดเขต</span>
+          <strong id="modalDeadline">-</strong>
+        </div>
+      </div>
+
+      <a
+        id="modalAction"
+        class="apply-button"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        สมัคร / ดูรายละเอียดทุน
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="./script.js"></script>
+
+</body>
+</html>
